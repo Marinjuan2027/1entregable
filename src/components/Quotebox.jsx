@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Quotebox = () => {
-    return (
-        <div>
-            <h1>hola camilo</h1>
-        </div>
-    );
+  return <div></div>;
 };
 
 export default Quotebox;
