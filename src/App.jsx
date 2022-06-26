@@ -34,7 +34,7 @@ function App() {
           {quotes[index].quote}
         </p>
         <p className="author">{quotes[index].author}</p>
-        <div className="boton2">
+        <div className="button2">
           <button
             onClick={changeQuote}
             style={{ color: "black", backgroundColor: color }}
