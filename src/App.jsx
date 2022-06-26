@@ -1,6 +1,8 @@
 import { useState } from "react";
 import quotes from "./quotes.json";
 import "./App.css";
+import Button from "./components/Button";
+import Quotebox from "./components/Quotebox";
 
 const colors = [
   "#845EC2",
@@ -25,23 +27,12 @@ function App() {
   const ramdonColorIndex = Math.floor(Math.random() * colors.length);
   const color = colors[ramdonColorIndex];
   document.body.style = `background: ${color}`;
-
+  const appBack = { backgroundColor: color };
   return (
-    <div className="App">
+    <div className="App" style={appBack}>
       <div className="card" style={{ color: color }}>
-        <p>
-          <i className="fa-solid fa-quote-left"></i>
-          {quotes[index].quote}
-        </p>
-        <p className="author">{quotes[index].author}</p>
-        <div className="button2">
-          <button
-            onClick={changeQuote}
-            style={{ color: "black", backgroundColor: color }}
-          >
-            <i className="fa-solid fa-angle-right"></i>
-          </button>
-        </div>
+        <Quotebox quotes={quotes} index={index} />
+        <Button changeQuote={changeQuote} color={color} />
       </div>
     </div>
   );
